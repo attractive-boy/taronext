@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
         showSuccess: true,
         successMsg: '登录成功'
       });
-      window.location.href = '/user';
+      window.location.href = '/users';
     } catch (error) {
       // 错误已经被请求服务处理，这里不需要额外处理
     }
