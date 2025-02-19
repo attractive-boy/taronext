@@ -13,7 +13,7 @@ const UsersPage = () => {
   const [isClient, setIsClient] = useState(false);
   const [cardList, setCardList] = useState([]);
   const getAllCard = async () => {
-    const response: any = [{"deck_name":"陈靖韬灵犀心理牌"},{"deck_name":"彩虹牌"}];
+    const response: any = [{"deck_name":"陈靖韬灵犀心理牌"},{"deck_name":"陈靖韬虹道励志牌"}];
     setCardList(response);
   }
   useEffect(() => {

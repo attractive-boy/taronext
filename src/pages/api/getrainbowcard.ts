@@ -9,7 +9,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             res.status(200).json(tarotCards); 
         } catch (error) {
             console.error(error);
-            res.status(500).json({ message: '获取彩虹牌失败' });
+            res.status(500).json({ message: '获取陈靖韬虹道励志牌失败' });
         }
     } else {
         res.setHeader('Allow', ['GET']);
