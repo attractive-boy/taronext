@@ -4,16 +4,15 @@ import db from "../../db";
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'GET') {
     try {
-      const { current = 1, pageSize = 10, nickname, real_name, phone, user_type, verify_status } = req.query;
+      const { current = 1, pageSize = 10, name,  phone } = req.query;
 
       let query = db('users');
 
       // 添加搜索条件
-      if (nickname) query = query.where('nickname', 'like', `%${nickname}%`);
-      if (real_name) query = query.where('real_name', 'like', `%${real_name}%`);
+      if (name) query = query.where('name', 'like', `%${name}%`);
+
       if (phone) query = query.where('phone', 'like', `%${phone}%`);
-      if (user_type) query = query.where('user_type', user_type);
-      if (verify_status) query = query.where('verify_status', verify_status);
+ 
 
       // 分别执行计数查询和数据查询
       const countQuery = query.clone().count('* as total');
