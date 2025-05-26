@@ -33,7 +33,7 @@ const UsersPage = () => {
 
   const handleCreateUser = async () => {
     try {
-      await post('/users.create', newUser);
+      await post('/userscreate', newUser);
       message.success('创建用户成功');
       setCreateModalVisible(false);
       setNewUser({ phone: '', auth_card_level: [] });
@@ -155,7 +155,7 @@ const UsersPage = () => {
                 </div>
               ),
               onOk: () => {
-                put('/users.setLevel', { id: record.id, auth_card_level: record.auth_card_level });
+                put('/userssetLevel', { id: record.id, auth_card_level: record.auth_card_level });
                 message.success('修改成功');
                 ref.current?.reload();
               },
